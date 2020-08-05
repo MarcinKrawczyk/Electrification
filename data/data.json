@@ -1,0 +1,105 @@
+{
+  "form": {
+    "title": "Electrification",
+    "description": "",
+    "sections": [
+      {
+        "title": "Electrification: find out what works best for you",
+        "type": "PAGE_BREAK",
+        "description": "Are you interested in electric cars and curious to find out whether they fit your lifestyle? Great! Let us help you learn about electrification and discover what works best for you."
+      },
+      {
+        "title": "Charging: availability and convenience",
+        "type": "PAGE_BREAK",
+        "description": "The ability to charge regularly plays a big role in the ownership of an electric or plug-in hybrid vehicle. Let’s explore your level of charging convenience."
+      },
+      {
+        "title": "Where do you park your car at home?",
+        "type": "PAGE_BREAK",
+        "description": ""
+      },
+      {
+        "title": "Where do you park your car at home?",
+        "type": "MULTIPLE_CHOICE",
+        "choices": [
+          {
+            "value": "A garage or driveway where I have guaranteed access to charging when I want it"
+          },
+          {
+            "value": "A parking where I sometimes have access to charging, but it is not guaranteed e.g. an apartment garage or street"
+          },
+          {
+            "value": "A place with no easy access to charging, e.g. public street"
+          }
+        ]
+      },
+      {
+        "title": "Where do you park your car during your working hours?",
+        "type": "PAGE_BREAK",
+        "description": ""
+      },
+      {
+        "title": "Where do you park your car during your working hours?",
+        "type": "MULTIPLE_CHOICE",
+        "choices": [
+          {
+            "value": "A spot where I have guaranteed access to charging when I want it"
+          },
+          {
+            "value": "A parking where I sometimes have access to charging, but it is not guaranteed"
+          },
+          {
+            "value": "A place with no easy access to charging (e.g. public street)"
+          }
+        ]
+      },
+      {
+        "title": "How long do you typically drive in a week day?",
+        "type": "PAGE_BREAK",
+        "description": ""
+      },
+      {
+        "title": "How long do you typically drive in a week day?",
+        "type": "MULTIPLE_CHOICE",
+        "choices": [
+          { "value": "Less than 25 mi" },
+          { "value": "More than 25 mi, but less than 100 mi" },
+          { "value": "More than 100 mi" }
+        ]
+      }
+    ]
+  },
+  "points": [
+    ["Questions", "Anwers", "Pure Electric points", "Plug-in Hybrid points"],
+    ["", "", "", ""],
+    [
+      "Where do you park your car at Home?",
+      "A garage or driveway where I have guaranteed access to charging when I want it",
+      1,
+      1
+    ],
+    [
+      "",
+      "A parking where I sometimes have access to charging, but it is not guaranteed e.g. an apartment garage or street",
+      0.5,
+      1
+    ],
+    ["", "A place with no easy access to charging, e.g. public street", 0, 1],
+    [
+      "Where do you park your car during your Working Hours?",
+      "A spot where I have guaranteed access to charging when I want it",
+      1,
+      1
+    ],
+    [
+      "",
+      "A parking where I sometimes have access to charging, but it is not guaranteed",
+      0.5,
+      1
+    ],
+    ["", "A place with no easy access to charging (e.g. public street)", 0, 1],
+    ["How long do you typically drive in a week day?", "Less than 25 mi", 1, 1],
+    ["", "More than 25 mi, but less than 100 mi", 0, 1],
+    ["", "More than 100 mi", -1, 1]
+  ]
+}
