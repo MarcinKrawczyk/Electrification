@@ -12,15 +12,10 @@ const Button = styled.button`
   margin: 1rem 0;
 `;
 
-const onClick = (e) => {
-  console.log("Click");
-};
-
 const Screen = ({ title, description, onComplete }) => (
   <div>
     <Title>{title}</Title>
     <p>{description}</p>
-    <Button onClick={onComplete}>Continue</Button>
   </div>
 );
 

@@ -1,31 +1,35 @@
 import Head from "next/head";
-import Info from "../components/Info.jsx";
-import Question from "../components/Question.jsx";
+import PageBreak from "../components/PageBreak.jsx";
+import MultipleChoice from "../components/MultipleChoice.jsx";
+import Result from "../components/Result.jsx";
 import data from "../data/data.json";
 import styled from "styled-components";
 import { useState } from "react";
 import { filterSections } from "../utils/filterData";
+
+const result = {
+  title: "Result",
+  type: "RESULT",
+  description: "Your result is: ",
+};
 
 const Main = styled.div`
   textalign: "left";
 `;
 
 const Home = () => {
-  const sections = filterSections(data.form.sections);
-  //const [sections, setSections] = useState(filterSections(data.form.sections));
-  console.log("sections", sections);
+  const sections = filterSections(data.form.sections).concat(result);
   const [index, setIndex] = useState(0);
   const section = sections[index];
 
   const onPageComplete = (answerIndex) => {
-    console.log("answerIndex", answerIndex);
-    if (section.type === "MULTIPLE_CHOICE") sections[index].answer = index;
-    //setSections(sections)
-    console.log(sections);
+    if (section.type === "MULTIPLE_CHOICE")
+      sections[index].answer = answerIndex;
+
     setIndex(index + 1);
   };
 
-  console.log("section", section);
+  console.log(sections);
 
   return (
     <div className="container">
@@ -36,18 +40,21 @@ const Home = () => {
 
       <Main>
         {section.type === "PAGE_BREAK" && (
-          <Info
+          <PageBreak
             title={section.title}
             description={section.description}
             onComplete={onPageComplete}
           />
         )}
         {section.type === "MULTIPLE_CHOICE" && (
-          <Question
+          <MultipleChoice
             title={section.title}
             choices={section.choices}
             onComplete={onPageComplete}
           />
+        )}
+        {section.type === "RESULT" && (
+          <Result title={section.title} description={section.description} />
         )}
       </Main>
 
@@ -58,7 +65,7 @@ const Home = () => {
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
-          align-items: center;
+          align-items: left;
         }
       `}</style>
 
