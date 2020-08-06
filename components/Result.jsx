@@ -8,14 +8,17 @@ const Title = styled.h1`
   margin: 1rem 0 2rem 0;
 `;
 
-const Button = styled.button`
-  margin: 1rem 0;
+const Result = styled.p`
+  margin: 0.25rem 0;
 `;
 
-const Screen = ({ title, description, onComplete }) => (
+const Screen = ({ title, results, onComplete }) => (
   <div>
     <Title>{title}</Title>
-    <p>{description}</p>
+    {results &&
+      results.map((result, index) => {
+        return <Result key={`result-${index}`}>{result}</Result>;
+      })}
   </div>
 );
 

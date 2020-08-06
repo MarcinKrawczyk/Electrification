@@ -29,7 +29,7 @@ const Home = () => {
       sections[index].answer = answerIndex;
 
     if (index === sections.length - 2) {
-      calculateResult(sections, cleanUpPoints(data.points));
+      calculateResult(sections, cleanUpPoints(data.points), data.score);
     }
 
     setIndex(index + 1);
@@ -58,7 +58,7 @@ const Home = () => {
           />
         )}
         {section.type === "RESULT" && (
-          <Result title={section.title} description={section.description} />
+          <Result title={section.title} results={section.results} />
         )}
       </Main>
 
@@ -70,6 +70,9 @@ const Home = () => {
           flex-direction: column;
           justify-content: flex-start;
           align-items: left;
+          max-width: 500px;
+          margin-right: auto;
+          margin-left: auto;
         }
       `}</style>
 

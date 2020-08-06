@@ -7,9 +7,10 @@ const Card = styled.div`
   textalign: "left";
   color: "inherit";
   textdecoration: "none";
-  border: 1px solid black;
+  border: 1px solid #dddddd;
   borderradius: "10px";
   transition: "color 0.15s ease, border-color 0.15s ease";
+  cursor: pointer;
 
   & p {
     lineheight: 2.5rem;

@@ -9,10 +9,6 @@ const RadioRow = styled.div`
   margin: 1rem 0;
 `;
 
-const Button = styled.button`
-  margin: 1rem 0;
-`;
-
 const Question = ({ title, choices, onComplete }) => (
   <div>
     <Title>{title}</Title>

@@ -9,7 +9,9 @@ const Title = styled.h1`
 `;
 
 const Button = styled.button`
-  margin: 1rem 0;
+  margin: 2rem 0;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
 `;
 
 const Screen = ({ title, description, onComplete }) => (

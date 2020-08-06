@@ -4,7 +4,7 @@
     "description": "",
     "sections": [
       {
-        "title": "Electrification: find out what works best for you",
+        "title": "Find out what works best for you",
         "type": "PAGE_BREAK",
         "description": "Are you interested in electric cars and curious to find out whether they fit your lifestyle? Great! Let us help you learn about electrification and discover what works best for you."
       },
@@ -70,8 +70,7 @@
     ]
   },
   "points": [
-    ["Questions", "Anwers", "Pure Electric points", "Plug-in Hybrid points"],
-    ["", "", "", ""],
+    ["Questions", "Anwers", "Pure Electric", "Plug-in Hybrid"],
     [
       "Where do you park your car at home?",
       "A garage or driveway where I have guaranteed access to charging when I want it",
@@ -101,5 +100,6 @@
     ["How long do you typically drive in a week day?", "Less than 25 mi", 1, 1],
     ["", "More than 25 mi, but less than 100 mi", 0, 1],
     ["", "More than 100 mi", -1, 1]
-  ]
+  ],
+  "score": ["Minimal score for a category to qualify", 2]
 }
