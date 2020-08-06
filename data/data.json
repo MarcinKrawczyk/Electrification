@@ -73,7 +73,7 @@
     ["Questions", "Anwers", "Pure Electric points", "Plug-in Hybrid points"],
     ["", "", "", ""],
     [
-      "Where do you park your car at Home?",
+      "Where do you park your car at home?",
       "A garage or driveway where I have guaranteed access to charging when I want it",
       1,
       1
@@ -86,7 +86,7 @@
     ],
     ["", "A place with no easy access to charging, e.g. public street", 0, 1],
     [
-      "Where do you park your car during your Working Hours?",
+      "Where do you park your car during your working hours?",
       "A spot where I have guaranteed access to charging when I want it",
       1,
       1

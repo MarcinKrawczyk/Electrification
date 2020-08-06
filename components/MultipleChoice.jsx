@@ -13,10 +13,6 @@ const Button = styled.button`
   margin: 1rem 0;
 `;
 
-// const onSelect = (e) => {
-//   console.log("Click");
-// };
-
 const Question = ({ title, choices, onComplete }) => (
   <div>
     <Title>{title}</Title>

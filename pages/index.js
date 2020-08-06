@@ -6,11 +6,13 @@ import data from "../data/data.json";
 import styled from "styled-components";
 import { useState } from "react";
 import { filterSections } from "../utils/filterData";
+import { calculateResult } from "../utils/calculateResult";
+import { cleanUpPoints } from "../utils/cleanUpPoints";
 
 const result = {
-  title: "Result",
+  title: "Your results",
   type: "RESULT",
-  description: "Your result is: ",
+  descrption: "",
 };
 
 const Main = styled.div`
@@ -26,10 +28,12 @@ const Home = () => {
     if (section.type === "MULTIPLE_CHOICE")
       sections[index].answer = answerIndex;
 
+    if (index === sections.length - 2) {
+      calculateResult(sections, cleanUpPoints(data.points));
+    }
+
     setIndex(index + 1);
   };
-
-  console.log(sections);
 
   return (
     <div className="container">
