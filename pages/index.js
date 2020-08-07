@@ -23,16 +23,24 @@ const Home = () => {
   const sections = filterSections(data.form.sections).concat(result);
   const [index, setIndex] = useState(0);
   const section = sections[index];
+  const isMultipleChoice = section.type === "MULTIPLE_CHOICE";
 
   const onPageComplete = (answerIndex) => {
-    if (section.type === "MULTIPLE_CHOICE")
-      sections[index].answer = answerIndex;
+    if (isMultipleChoice) sections[index].answer = answerIndex;
 
     if (index === sections.length - 2) {
       calculateResult(sections, cleanUpPoints(data.points), data.score);
     }
 
-    setIndex(index + 1);
+    if (isMultipleChoice && sections[index].choices[answerIndex].goto) {
+      const gotoSection = sections.find(
+        (section) => section.title === sections[index].choices[answerIndex].goto
+      );
+      const gotoIndex = sections.indexOf(gotoSection);
+      setIndex(gotoIndex);
+    } else {
+      setIndex(index + 1);
+    }
   };
 
   return (

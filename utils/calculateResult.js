@@ -9,13 +9,14 @@ export const calculateResult = (sections, points, score) => {
 
   questions.forEach((question) => {
     points.forEach((row) => {
-      const sameQuestion = question.title === row[0];
-      const sameAnswer = question.choices[question.answer].value === row[1];
-
-      if (sameQuestion && sameAnswer) {
-        categories.forEach((category, index) => {
-          categories[index].score = categories[index].score + row[index + 2];
-        });
+      if (question.answer !== undefined) {
+        const sameQuestion = question.title === row[0];
+        const sameAnswer = question.choices[question.answer].value === row[1];
+        if (sameQuestion && sameAnswer) {
+          categories.forEach((category, index) => {
+            categories[index].score = categories[index].score + row[index + 2];
+          });
+        }
       }
     });
   });

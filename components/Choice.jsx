@@ -6,14 +6,13 @@ const Card = styled.div`
   lineheight: 2.5rem;
   textalign: "left";
   color: "inherit";
-  textdecoration: "none";
   border: 1px solid #dddddd;
-  borderradius: "10px";
   transition: "color 0.15s ease, border-color 0.15s ease";
   cursor: pointer;
+  border-radius: 5px;
 
   & p {
-    lineheight: 2.5rem;
+    user-select: none;
   }
 `;
 
